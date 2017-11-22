@@ -1,0 +1,34 @@
+.course{
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+    width: 200px;
+    height: 280px;
+    border: 3px solid #8A7CB8;
+    background-color: #E9E4F7;
+}
+
+.course-img{
+   
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+    margin-left:45px;
+}
+
+.course-img img{
+    height: 100%;
+    width:100%;
+}
+
+.course-title{
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.course-details{
+    font-family: Courier New;
+    font-size: 14px;
+    text-align: center;
+}

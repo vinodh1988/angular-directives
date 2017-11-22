@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-head.component.css']
 })
 export class MenuHeadComponent implements OnInit {
-
+routes:string[]=[
+   'Offices','Ebooks','Videos','Reviews','Complaints'];
   constructor() { }
 
   ngOnInit() {

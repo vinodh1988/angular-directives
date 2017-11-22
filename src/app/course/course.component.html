@@ -1,0 +1,13 @@
+<div class="course">
+  <div class="course-img">
+    <img src="../../assets/images/{{coursedata.image}}" 
+    alt="image not available">
+  </div>
+  <div class="course-title">{{coursedata.coursename}}</div>
+  <div class="course-details">
+    Price: INR.{{coursedata.price}}<br>
+    Duration : {{coursedata.duration}} hrs<br><br>
+    <button class="btn btn-info" (click)="courseSelected()">Buy course
+    </button>
+  </div>
+</div>

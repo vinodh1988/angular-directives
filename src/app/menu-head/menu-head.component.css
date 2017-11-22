@@ -1,0 +1,15 @@
+.navbar-inverse
+{
+    background-color: #736797;
+    color: whitesmoke;
+    border: none;
+    border-radius: 0px;
+}
+.navbar a:link
+{
+    color: whitesmoke;
+}
+.navbar a:hover{
+    color: #C7BEE4;
+    background-color: black;
+}
