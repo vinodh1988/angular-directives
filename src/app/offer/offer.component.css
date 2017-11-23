@@ -1,0 +1,16 @@
+.banner{
+    z-index:3;
+    background-color: #6345B6;
+    color: white;
+    font-size:30px;
+    text-align:center;
+    position: fixed;
+    padding-top:200px;
+    height:100%;
+    width:100%;
+    font-family:Arial;
+    top:0%;
+    left:0%;
+    opacity: 0.9;
+
+}

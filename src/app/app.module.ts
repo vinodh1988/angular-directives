@@ -21,7 +21,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { SearchcoursePipe } from './pipes/searchcourse.pipe';
-
+import { DiscountDirective } from './directives/discount.directive';
+import { OfferComponent } from './offer/offer.component';
+import { BannerDirective } from './directives/banner.directive';
+import {DealdayService}from './dealday.service';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -49,7 +52,10 @@ const routes=[
     ReviewboxComponent,
     ReviewformComponent,
     DiscountPipe,
-    SearchcoursePipe
+    SearchcoursePipe,
+    DiscountDirective,
+    OfferComponent,
+    BannerDirective
   ],
   imports: [
     BrowserModule,HttpModule, FormsModule, 
@@ -64,7 +70,7 @@ const routes=[
       }
   })
   ],
-  providers: [CourseService,ReviewService],
+  providers: [CourseService,ReviewService,DealdayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
