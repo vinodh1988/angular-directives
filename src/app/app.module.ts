@@ -19,6 +19,8 @@ import { ReviewformComponent } from './routes/reviews/reviewform/reviewform.comp
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
+import { DiscountPipe } from './pipes/discount.pipe';
+import { SearchcoursePipe } from './pipes/searchcourse.pipe';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +47,9 @@ const routes=[
     ReviewsComponent,
     ComplaintsComponent,
     ReviewboxComponent,
-    ReviewformComponent
+    ReviewformComponent,
+    DiscountPipe,
+    SearchcoursePipe
   ],
   imports: [
     BrowserModule,HttpModule, FormsModule, 

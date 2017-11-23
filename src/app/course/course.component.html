@@ -5,7 +5,7 @@
   </div>
   <div class="course-title">{{coursedata.coursename}}</div>
   <div class="course-details">
-    Price: INR.{{coursedata.price}}<br>
+    Price: {{coursedata.price | discount:coursedata.duration | currency:'INR':true}}<br>
     Duration : {{coursedata.duration}} hrs<br><br>
     <button class="btn btn-info" (click)="courseSelected()">Buy course
     </button>

@@ -1,5 +1,12 @@
+Filter by course
+<select name="course"[(ngModel)]="course">
+  <option>Java</option>
+  <option>HTML</option>
+  <option>CSS</option>
+  <option>Javascript</option>
+</select>
 <div class="reviews">
-<div class="review" *ngFor="let x of reviews">
+<div class="review" *ngFor="let x of reviews|searchcourse:course">
   <reviewbox [review]="x"></reviewbox>
 </div>
 </div>
