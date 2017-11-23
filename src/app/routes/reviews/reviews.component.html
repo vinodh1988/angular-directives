@@ -1,3 +1,7 @@
-<p>
-  reviews works!
-</p>
+<div class="reviews">
+<div class="review" *ngFor="let x of reviews">
+  <reviewbox [review]="x"></reviewbox>
+</div>
+</div>
+
+<reviewform></reviewform>

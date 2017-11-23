@@ -1,0 +1,49 @@
+<div class="form-box">
+   <h1> Post your review</h1>
+   <form  [formGroup]="rvwForm" (submit)="saveReview()">
+<table>
+
+  <tr>
+  <th><label for="name" >Name</label></th>
+  <td><input  id="name" formControlName="name"/></td>
+  <td><div *ngIf='rvwForm.controls.name.hasError("required")'>
+    Should be filled</div>
+  <div *ngIf="rvwForm.controls.name.hasError('needFormat')">
+    Name should not have numbers or special characters</div></td>
+  </tr>
+
+    <tr>
+  <th><label for="email" >Email</label></th>
+  <td><input  id="email" formControlName="email"/></td>
+  <td><div *ngIf='rvwForm.controls.email.hasError("required")'>
+    Should be filled</div>
+  <div *ngIf='rvwForm.controls.email.hasError("pattern")'>
+    Should be in email format</div>
+  </td>
+  </tr>
+
+  <tr>
+  <th><label for="course" >Course</label></th>
+  <td><select id="course" formControlName="course">
+       <option>Java</option>
+       <option>Javascript</option><option>CSS3</option>
+        <option>HTML5</option>       
+    </select></td>
+  <td></td>
+  </tr>
+
+<tr>
+ <th> <label for="message">Message</label></th>
+  <td><textarea  id="message" formControlName="message"></textarea></td>
+  <td><div *ngIf='rvwForm.controls.message.errors'>Should be filled</div>
+  </td></tr>
+
+  <tr><td colspan="3" align="center">
+  <button type="submit" [disabled]="!rvwForm.valid" class="btn
+  btn-info">Post Review</button>
+  </td></tr>
+
+
+</table>
+  </form>
+</div>

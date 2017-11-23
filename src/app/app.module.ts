@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { MenuHeadComponent } from './menu-head/menu-head.component';
 import { CourselistComponent } from './courselist/courselist.component';
@@ -12,6 +12,17 @@ import { VideosComponent } from './routes/videos/videos.component';
 import { ReviewsComponent } from './routes/reviews/reviews.component';
 import { ComplaintsComponent } from './routes/complaints/complaints.component';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpModule} from '@angular/http';
+import {ReviewService} from './review.service';
+import { ReviewboxComponent } from './routes/reviews/reviewbox/reviewbox.component';
+import { ReviewformComponent } from './routes/reviews/reviewform/reviewform.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {HttpClientModule,HttpClient} from '@angular/common/http';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 const routes=[
   {path:"",component: CourselistComponent},
@@ -32,12 +43,24 @@ const routes=[
     EbooksComponent,
     VideosComponent,
     ReviewsComponent,
-    ComplaintsComponent
+    ComplaintsComponent,
+    ReviewboxComponent,
+    ReviewformComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes)
+    BrowserModule,HttpModule, FormsModule, 
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+      }
+  })
   ],
-  providers: [CourseService],
+  providers: [CourseService,ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

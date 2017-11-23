@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="/">Home</a></li>
       <li *ngFor="let x of routes">
-        <a routerLink="/{{x}}">{{x}}</a></li>
+        <a routerLink="/{{x}}">{{"VARS."+x | translate}}</a></li>
    
     </ul>
   

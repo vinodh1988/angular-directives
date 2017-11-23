@@ -1,0 +1,36 @@
+.form-box{
+    min-width: 600px;
+    min-height:300px;
+    padding:30px;
+    margin:20px;
+    border: 2px dashed lightslategray;
+    border-radius:10px;
+}
+
+th{
+    width: 100px;
+    height:30px;
+    color: darkslateblue;
+}
+td{
+     height:30px;
+     min-width:200px;
+}
+
+input[type="text"],select
+{
+    border: 1px solid gray;
+    height: 30px;
+    width: 200px;
+    
+}
+textarea{
+    height: 200px;
+    width: 300px;
+    border: 1px solid gray;
+}
+
+h1{
+    color: darkblue;
+}
+
